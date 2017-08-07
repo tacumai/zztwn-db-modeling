@@ -149,44 +149,76 @@ div.mdiv {
 //--- はテーブル行の区切り
 //==> はブロック間のリンク
 [b1] <1,1>
-#block1
-content
+# Shops
+id 
 ---
-to-block2
-==>[b2]
-to-block3
-==>[b3]
+name
+---
+address
+---
+email
+---
+tel
+---
+bank_code
+---
+banck_branch
+---
+account_number
+---
+password
+---
+password_confirmation (var 256)
+---
+created_at
+---
+updated_at
+---
 
-[b2] <11,1.5>
-#block2
+[b2] <25,1>
+# PlacingOrders
 content
 ---
 to-block4
-==>[b4]
 
-[b3] <11,10.5>
-block3
+[b3] <40,1>
+# SKU
+name_roman
+---
+name
+---
+category
+---
 
-//==>の前後のlrudは、リンクを繋ぐ位置を指定
-[b4] <20.6,4>
-block4
-d==>u[b5]
-==>[b6]
+[b4] <40,10>
+# Stocks
+name_roman
+---
+name
+---
+category
+---
 
-//()内はスタイルを設定するクラス名
-[b5] (bd_r6 red bold) <20.5,11.5>
-block5
-d=(S red)=>r[b7]
-l<=(l_w4)=>r[b3]
+to-block4
+==
 
-//画像使用例
-[b6] (image) <31,6>
-![server](img/computer_server.png "192.168.1.1")
+[b5] <25,10>
+# Earnings
+content
+---
+to-block4
 
-//カスタムスタイル
-[b7] (custom1) <6,16>
-block6
+[b6] <70,1>
+# Customers
+content
+---
+to-block4
 
+[b7] <55,1>
+# ReceivingOrders
+content
+---
+to-block4
 
 </textarea>
 </div>
