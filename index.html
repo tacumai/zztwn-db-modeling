@@ -148,8 +148,8 @@ div.mdiv {
 //[name]はブロックの定義
 //--- はテーブル行の区切り
 //==> はブロック間のリンク
-[b1] <1,1>
-# Shops
+[clients] <1,1>
+# Clients
 id 
 ---
 name
@@ -168,58 +168,142 @@ account_number
 ---
 password
 ---
-password_confirmation (var 256)
+password_confirmation
 ---
+
+[placing_orders] <25,1>
+# PlacingOrders
+id
+---
+client_id (FK)
+==>[clients]
+sku_id (FK)
+==>[sku]
+count
+---
+cost_outsided_tax
+---
+
+[stocks] <25,15>
+# Stocks
+id
+---
+sku_id (FK)
+==>[sku]
+count
+---
+
+[earnings] <25,25>
+# Earnings(WIP)
+hoge
+---
+fuga
+
+[sku] <41.5,1>
+# SKU
+id
+---
+item_id (FK)
+---
+name
+---
+color_id (FK)
+==>[color_master]
+size_id (FK)
+==>[size_master]
+selling_price
+---
+purchase_price
+---
+
+[color_master] <53,1>
+# Colors
+id
+---
+name
+---
+
+[size_master] <53,9.5>
+# Size
+id
+---
+size
+---
+
+[items] <40,20>
+# Items
+id
+---
+item_code
+---
+name
+---
+detail
+---
+image_id (FK)
+==>[item_images]
+category_id (FK)
+==>[category]
+
+[item_images] <40,40>
+# ItemImages
+---
+id
+---
+item_id
+---
+url
+---
+size
+---
+order_number
+---
+
+[category] <40,55>
+# categories
+---
+id
+---
+name
+---
+category_rank
+---
+category_path
+---
+bottom_flag
+---
+
+
+[customers] <75,1>
+# Customers
+id
+---
+name
+---
+address
+---
+e-mail
+---
+bank_code
+---
+banck_branch
+---
+account_number
+---
+password
+---
+password_confirmation
+
+[receiving_orders] <60,1>
+# ReceivingOrders
+id
+---
+customer_id (FK)
+==>[customers]
+sku_id (FK)
+==>[sku]
 created_at
 ---
-updated_at
----
-
-[b2] <25,1>
-# PlacingOrders
-content
----
-to-block4
-
-[b3] <40,1>
-# SKU
-name_roman
----
-name
----
-category
----
-
-[b4] <40,10>
-# Stocks
-name_roman
----
-name
----
-category
----
-
-to-block4
-==
-
-[b5] <25,10>
-# Earnings
-content
----
-to-block4
-
-[b6] <70,1>
-# Customers
-content
----
-to-block4
-
-[b7] <55,1>
-# ReceivingOrders
-content
----
-to-block4
-
 </textarea>
 </div>
 <div class="mdiv">
